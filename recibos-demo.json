@@ -1,0 +1,128 @@
+{
+  "configuracion": {
+    "periodo": "Diciembre",
+    "anio": "2028",
+    "fecha": "28/12/2029",
+    "diaPago1": 20,
+    "diaPago2": 21,
+    "diaCorte": 25
+  },
+  "recibos": [
+    {
+      "puesto": {
+      "id": 101,
+      "numero_puesto": "A-01",
+      "propietario": "Maria López",
+      "dni": "12345678",
+      "grupo": 1,
+      "numero_medidor": "MD-1001"
+    },
+    "ultimaLectura": {
+      "id": 5001,
+      "fecha": "2025-12-01",
+      "lectura_anterior": 1200,
+      "lectura_actual": 1280,
+      "consumo": "80"
+    },
+    "deudas": {
+      "lectura": [],
+      "otros": [],
+      "totales": { "lectura": 0, "otros": 0, "general": 0 }
+    }
+  },
+  {
+    "puesto": {
+      "id": 102,
+      "numero_puesto": "A-02",
+      "propietario": "Juan Pérez",
+      "dni": "87654321",
+      "grupo": 1,
+      "numero_medidor": "MD-1002"
+    },
+    "ultimaLectura": {
+      "id": 5002,
+      "fecha": "2025-12-01",
+      "lectura_anterior": 950,
+      "lectura_actual": 980,
+      "consumo": "30"
+    },
+    "deudas": {
+      "lectura": [
+        { "id": 9001, "titulo": "Ajuste lectura octubre", "monto": 10 }
+      ],
+      "otros": [],
+      "totales": { "lectura": 10, "otros": 0, "general": 10 }
+    }
+  },
+  {
+    "puesto": {
+      "id": 103,
+      "numero_puesto": "B-10",
+      "propietario": "Rosa García",
+      "dni": "44556677",
+      "grupo": 2,
+      "numero_medidor": "MD-2001"
+    },
+    "ultimaLectura": {
+      "id": 5003,
+      "fecha": "2025-12-01",
+      "lectura_anterior": 2000,
+      "lectura_actual": 2012,
+      "consumo": "12"
+    },
+    "deudas": {
+      "lectura": [],
+      "otros": [
+        { "id": 9101, "titulo": "Reconexión", "monto": 15 }
+      ],
+      "totales": { "lectura": 0, "otros": 15, "general": 15 }
+    }
+  },
+  {
+    "puesto": {
+      "id": 104,
+      "numero_puesto": "C-05",
+      "propietario": "Carlos Torres",
+      "dni": "99887766",
+      "grupo": 3,
+      "numero_medidor": "MD-3005"
+    },
+    "ultimaLectura": {
+      "id": 5004,
+      "fecha": "2025-12-01",
+      "lectura_anterior": 400,
+      "lectura_actual": 404,
+      "consumo": "4"
+    },
+    "deudas": {
+      "lectura": [],
+      "otros": [],
+      "totales": { "lectura": 0, "otros": 0, "general": 0 }
+    }
+  },
+  {
+    "puesto": {
+      "id": 105,
+      "numero_puesto": "D-12",
+      "propietario": "Luisa Mendoza",
+      "dni": "22334455",
+      "grupo": 4,
+      "numero_medidor": "MD-4012"
+    },
+    "ultimaLectura": {
+      "id": 5005,
+      "fecha": "2025-12-01",
+      "lectura_anterior": 1600,
+      "lectura_actual": 1655,
+      "consumo": "55"
+    },
+    "deudas": {
+      "lectura": [],
+      "otros": [
+        { "id": 9201, "titulo": "Multa mora", "monto": 8 }
+      ],
+      "totales": { "lectura": 0, "otros": 8, "general": 8 }
+    }
+  }
+  ]
+}
