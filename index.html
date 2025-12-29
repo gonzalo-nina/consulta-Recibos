@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consulta Pública de Recibos</title>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: "Segoe UI", Arial, sans-serif; margin: 0; padding: 24px; background: #f7f8fb; color: #1f2933; }
+    h1 { margin: 0 0 12px; font-size: 20px; color: #0f172a; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; box-shadow: 0 2px 6px rgba(15,23,42,0.06); padding: 16px; max-width: 640px; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    input { flex: 1; min-width: 200px; padding: 10px 12px; border: 1px solid #cfd4dc; border-radius: 8px; font-size: 15px; }
+    button { background: linear-gradient(135deg,#2563eb,#1d4ed8); color:#fff; border: none; border-radius: 8px; padding: 10px 16px; font-weight: 600; cursor: pointer; }
+    button:hover { filter: brightness(1.05); }
+    .result { margin-top: 12px; padding: 12px; border-radius: 8px; border: 1px solid #e5e7eb; background: #f9fafb; }
+    .muted { color: #6b7280; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Consulta Pública de Recibos</h1>
+    <div class="row">
+      <input id="busqueda" placeholder="Ej: A-01" />
+      <button onclick="buscar()">Buscar</button>
+    </div>
+    <div class="muted">Ingresa el número de puesto tal como figura en el recibo.</div>
+    <div id="resultado" class="result muted">Cargando datos...</div>
+  </div>
+
+  <script>
+    let data = null;
+    const base = location.pathname.endsWith('/') ? location.pathname : location.pathname + '/';
+
+    const tryFetch = async (url) => {
+      const r = await fetch(url);
+      if (!r.ok) throw new Error('No encontrado');
+      return r.json();
+    };
+
+    (async () => {
+      try {
+        data = await tryFetch(base + 'recibos.json');
+        document.getElementById('resultado').textContent = 'Datos cargados. Busca un puesto.';
+      } catch {
+        try {
+          data = await tryFetch(base + 'recibos-demo.json');
+          document.getElementById('resultado').textContent = 'Usando datos de demostración. Busca un puesto.';
+        } catch (error) {
+          document.getElementById('resultado').textContent = 'No se pudieron cargar datos.';
+        }
+      }
+    })();
+
+    function buscar() {
+      const el = document.getElementById('resultado');
+      if (!data) { el.textContent = 'Datos no cargados aún.'; return; }
+      const q = (document.getElementById('busqueda').value || '').trim().toLowerCase();
+      if (!q) { el.textContent = 'Ingresa un número de puesto.'; return; }
+
+      const recibo = (data.recibos || []).find(r => (r.puesto?.numero_puesto || '').toLowerCase() === q);
+      if (!recibo) { el.textContent = 'No encontrado.'; return; }
+
+      const cfg = data.configuracion || {};
+      el.innerHTML = `
+        <div><strong>Puesto:</strong> ${recibo.puesto.numero_puesto}</div>
+        <div><strong>Propietario:</strong> ${recibo.puesto.propietario || '-'}</div>
+        <div><strong>Consumo:</strong> ${recibo.ultimaLectura?.consumo ?? '-'} kWh</div>
+        <div><strong>Período:</strong> ${cfg.periodo ?? '-'}-${cfg.anio ?? '-'}</div>
+        <div class="muted">Días de pago: ${cfg.diaPago1 ?? '-'}, ${cfg.diaPago2 ?? '-'} — Corte: ${cfg.diaCorte ?? '-'}</div>
+      `;
+    }
+  </script>
+</body>
+</html>
