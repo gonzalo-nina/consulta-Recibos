@@ -7,14 +7,14 @@
   <style>
     :root { color-scheme: light; }
     * { box-sizing: border-box; }
-    body { font-family: "Segoe UI", Arial, sans-serif; margin: 0; padding: 24px; background: #f5f6fa; color: #0f172a; }
-    h1 { margin: 0 0 8px; font-size: 22px; }
+    body { font-family: "Segoe UI", Arial, sans-serif; margin: 0; padding: 16px; background: #f5f6fa; color: #0f172a; }
+    h1 { margin: 0 0 12px; font-size: 22px; text-align: center; }
     h2 { margin: 12px 0 8px; font-size: 18px; }
-    .layout { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
-    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 2px 10px rgba(15,23,42,0.06); padding: 16px; }
-    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-    input { flex: 1; min-width: 200px; padding: 10px 12px; border: 1px solid #cfd4dc; border-radius: 8px; font-size: 15px; }
-    button { background: linear-gradient(135deg,#2563eb,#1d4ed8); color:#fff; border: none; border-radius: 8px; padding: 10px 16px; font-weight: 600; cursor: pointer; }
+    .layout { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 2px 10px rgba(15,23,42,0.06); padding: 20px; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: stretch; }
+    input { flex: 1; min-width: 0; padding: 12px 14px; border: 1px solid #cfd4dc; border-radius: 8px; font-size: 16px; width: 100%; }
+    button { background: linear-gradient(135deg,#2563eb,#1d4ed8); color:#fff; border: none; border-radius: 8px; padding: 12px 20px; font-weight: 600; cursor: pointer; font-size: 15px; white-space: nowrap; }
     button:hover { filter: brightness(1.05); }
     button:disabled { opacity: 0.5; cursor: not-allowed; }
     .muted { color: #6b7280; font-size: 14px; }
@@ -646,6 +646,7 @@
     let data = null;
     let seleccionado = null;
     let config = {};
+    let modoDetalle = false; // false = resumen, true = detalle completo
     const statusEl = document.getElementById('status');
     const reciboContainer = document.getElementById('recibo-container');
     const btnDescargar = document.getElementById('btnDescargar');
@@ -669,7 +670,76 @@
       return redondear05(total);
     };
 
-    const renderRecibo = (recibo) => {
+    // VERSIÓN 1: RESUMEN (adaptado a móvil)
+    const renderResumen = (recibo) => {
+      const cfg = config || {};
+      const periodo = cfg.periodo ? `${cfg.periodo}-${(cfg.anio || '').toString().slice(-2)}` : '-';
+      const fecha = cfg.fecha || new Date().toLocaleDateString('es-PE');
+      const total = calcularTotal(recibo.ultimaLectura?.consumo, recibo.deudas);
+      const consumo = Number.parseFloat(recibo.ultimaLectura?.consumo || '0') || 0;
+
+      reciboContainer.classList.remove('muted');
+      reciboContainer.innerHTML = `
+        <div style="padding: 20px; background: white; border-radius: 10px; border: 1px solid #e5e7eb;">
+          <div style="text-align: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #2c5282;">
+            <div style="font-size: 1.2rem; font-weight: 700; color: #2c5282; margin-bottom: 5px;">
+              ⚡ RECIBO DE LUZ
+            </div>
+            <div style="font-size: 0.85rem; color: #4a5568;">
+              Período: ${periodo} | Fecha: ${fecha}
+            </div>
+          </div>
+
+          <div style="background: #f7fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+            <div style="font-size: 0.95rem; margin-bottom: 8px;">
+              <strong>Propietario:</strong> ${recibo.puesto?.propietario || '-'}
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.85rem;">
+              <div><strong>Puesto:</strong> ${recibo.puesto?.numero_puesto || '-'}</div>
+              <div><strong>Medidor:</strong> ${recibo.puesto?.numero_medidor || '-'}</div>
+            </div>
+          </div>
+
+          <div style="background: #edf2f7; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.85rem;">
+              <div>
+                <div style="color: #6b7280; font-size: 0.75rem; margin-bottom: 3px;">Lectura Anterior</div>
+                <div style="font-weight: 600;">${Number.parseFloat(recibo.ultimaLectura?.lectura_anterior || 0).toFixed(2)}</div>
+              </div>
+              <div>
+                <div style="color: #6b7280; font-size: 0.75rem; margin-bottom: 3px;">Lectura Actual</div>
+                <div style="font-weight: 600;">${Number.parseFloat(recibo.ultimaLectura?.lectura_actual || 0).toFixed(2)}</div>
+              </div>
+              <div>
+                <div style="color: #6b7280; font-size: 0.75rem; margin-bottom: 3px;">Consumo</div>
+                <div style="font-weight: 600; color: #2c5282;">${consumo} kWh</div>
+              </div>
+              <div>
+                <div style="color: #6b7280; font-size: 0.75rem; margin-bottom: 3px;">N° Recibo</div>
+                <div style="font-weight: 600;">${String(recibo.ultimaLectura?.id || '').padStart(6, '0')}</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #2c5282, #1e3a5f); color: white; padding: 15px; border-radius: 8px; text-align: center;">
+            <div style="font-size: 0.85rem; margin-bottom: 5px; opacity: 0.9;">Total a Pagar</div>
+            <div style="font-size: 1.8rem; font-weight: 700;">S/. ${total.toFixed(2)}</div>
+          </div>
+
+          <button id="btnVerDetalle" style="width: 100%; margin-top: 15px; padding: 12px; background: linear-gradient(135deg,#059669,#047857); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 15px;">
+            📋 Ver Recibo Completo
+          </button>
+        </div>
+      `;
+
+      document.getElementById('btnVerDetalle').addEventListener('click', () => {
+        modoDetalle = true;
+        renderDetalleAdaptado(recibo);
+      });
+    };
+
+    // VERSIÓN 2: DETALLE COMPLETO ADAPTADO (adaptado a móvil con max-width: 100%)
+    const renderDetalleAdaptado = (recibo) => {
       const cfg = config || {};
       const periodo = cfg.periodo ? `${cfg.periodo}-${(cfg.anio || '').toString().slice(-2)}` : '-';
       const fecha = cfg.fecha || new Date().toLocaleDateString('es-PE');
@@ -686,8 +756,7 @@
 
       reciboContainer.classList.remove('muted');
       reciboContainer.innerHTML = `
-        <div class="recibo-imprimible" id="recibo-imprimible">
-          <!-- RECIBO PRINCIPAL -->
+        <div class="recibo-imprimible" style="max-width: 100%; padding: 16px;">
           <div class="recibo-principal">
             <div class="recibo-header">
               <div class="header-linea-1">
@@ -706,7 +775,6 @@
               </div>
             </div>
 
-            <!-- DATOS DEL CLIENTE -->
             <div class="recibo-cliente">
               <h3>DATOS DEL CLIENTE</h3>
               <div class="recibo-cliente-datos-completos">
@@ -721,7 +789,6 @@
               </div>
             </div>
 
-            <!-- DETALLE DE CONSUMO -->
             <div class="recibo-consumo">
               <h3>DETALLE DE CONSUMO</h3>
               <table class="tabla-consumo">
@@ -751,12 +818,10 @@
               </table>
             </div>
 
-            <!-- TOTAL A PAGAR -->
             <div class="recibo-total">
               <h3>TOTAL A PAGAR: S/. ${total.toFixed(2)}</h3>
             </div>
 
-            <!-- NOTAS -->
             <div class="recibo-nota">
               <p class="nota-pago-resaltada">
                 Realice su pago los días ${cfg.diaPago1 ?? '-'} de diciembre y ${cfg.diaPago2 ?? '-'} de diciembre<br>
@@ -768,7 +833,135 @@
             </div>
           </div>
 
-          <!-- COMPROBANTE DE PAGO -->
+          <div class="recibo-comprobante">
+            <div class="comprobante-header">
+              <h3>⚡ RECIBO DE PAGO - PROYECTO ELECTRIFICACION</h3>
+              <p>Recibo N° ${String(recibo.ultimaLectura?.id || '').padStart(6, '0')} | Período: ${periodo}</p>
+            </div>
+
+            <div class="comprobante-resumen">
+              <div class="comprobante-cliente">
+                <p><strong>Propietario:</strong> ${recibo.puesto?.propietario || '-'}</p>
+                <p><strong>Puesto:</strong> ${recibo.puesto?.numero_puesto || '-'} (Grupo ${grupo})</p>
+              </div>
+              <div class="comprobante-monto">
+                <p><strong>Total a pagar:</strong> S/. ${total.toFixed(2)}</p>
+              </div>
+            </div>
+
+            <div class="comprobante-firma">
+              <div class="firma-cliente">
+                <div class="linea-firma"></div>
+                <p>Firma</p>
+              </div>
+              <div class="info-contacto">
+                <p class="fecha-pago">Fecha de pago: ___/___/______</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="btnVolverResumen" style="width: 100%; margin-top: 15px; padding: 12px; background: #6b7280; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 15px;">
+          ← Volver al Resumen
+        </button>
+      `;
+
+      document.getElementById('btnVolverResumen').addEventListener('click', () => {
+        modoDetalle = false;
+        renderResumen(recibo);
+      });
+    };
+
+    // VERSIÓN 3: PARA DESCARGA (formato original 500px - NO adaptado)
+    const generarReciboDescarga = (recibo) => {
+      const cfg = config || {};
+      const periodo = cfg.periodo ? `${cfg.periodo}-${(cfg.anio || '').toString().slice(-2)}` : '-';
+      const fecha = cfg.fecha || new Date().toLocaleDateString('es-PE');
+      const total = calcularTotal(recibo.ultimaLectura?.consumo, recibo.deudas);
+      
+      const consumo = Number.parseFloat(recibo.ultimaLectura?.consumo || '0') || 0;
+      const montoConsumo = consumo < 5 ? 5 : consumo * 1.01;
+      const gastosAdmin = 1;
+      const factor = consumo < 5 ? 'Mínimo' : '-';
+      const grupo = recibo.puesto?.grupo || '-';
+
+      return `
+        <div class="recibo-imprimible" style="max-width: 500px; padding: 20px;">
+          <div class="recibo-principal">
+            <div class="recibo-header">
+              <div class="header-linea-1">
+                <div class="empresa-titulo">
+                  <span class="icono-empresa">⚡</span>
+                  <span class="nombre-empresa">PROYECTO DE ELECTRIFICACION</span>
+                </div>
+                <div class="numero-recibo-principal">N° ${String(recibo.ultimaLectura?.id || '').padStart(6, '0')}</div>
+              </div>
+              <div class="header-linea-2">
+                <div class="tipo-documento">RECIBO DE LUZ</div>
+                <div class="fecha-periodo">
+                  <span>Fecha: ${fecha}</span>
+                  <span>Período: ${periodo}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="recibo-cliente">
+              <h3>DATOS DEL CLIENTE</h3>
+              <div class="recibo-cliente-datos-completos">
+                <div class="fila-datos">
+                  <div class="campo-recibo"><strong>Propietario:</strong> ${recibo.puesto?.propietario || '-'}</div>
+                  <div class="campo-recibo"><strong>DNI:</strong> ${recibo.puesto?.dni || '-'}</div>
+                </div>
+                <div class="fila-datos">
+                  <div class="campo-recibo"><strong>Puesto:</strong> ${recibo.puesto?.numero_puesto || '-'}</div>
+                  <div class="campo-recibo"><strong>Medidor:</strong> ${recibo.puesto?.numero_medidor || '-'} (G${grupo})</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="recibo-consumo">
+              <h3>DETALLE DE CONSUMO</h3>
+              <table class="tabla-consumo">
+                <thead>
+                  <tr>
+                    <th>Lectura Anterior</th>
+                    <th>Lectura Actual</th>
+                    <th>Consumo (kWh)</th>
+                    <th>Factor</th>
+                    <th>Monto</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>${Number.parseFloat(recibo.ultimaLectura?.lectura_anterior || 0).toFixed(2)}</td>
+                    <td>${Number.parseFloat(recibo.ultimaLectura?.lectura_actual || 0).toFixed(2)}</td>
+                    <td>${consumo}</td>
+                    <td>${factor}</td>
+                    <td>S/. ${redondear05(montoConsumo).toFixed(2)}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">Gastos administrativos</td>
+                    <td>-</td>
+                    <td>S/. ${gastosAdmin.toFixed(2)}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="recibo-total">
+              <h3>TOTAL A PAGAR: S/. ${total.toFixed(2)}</h3>
+            </div>
+
+            <div class="recibo-nota">
+              <p class="nota-pago-resaltada">
+                Realice su pago los días ${cfg.diaPago1 ?? '-'} de diciembre y ${cfg.diaPago2 ?? '-'} de diciembre<br>
+                de 11 am a 1 pm. (O hasta las 3 pm. en puesto 90)
+              </p>
+              <p class="nota-corte-resaltada">
+                FECHA DE CORTE <strong>${cfg.diaCorte ?? '-'} DE DICIEMBRE</strong>.
+              </p>
+            </div>
+          </div>
+
           <div class="recibo-comprobante">
             <div class="comprobante-header">
               <h3>⚡ RECIBO DE PAGO - PROYECTO ELECTRIFICACION</h3>
@@ -797,13 +990,23 @@
           </div>
         </div>
       `;
+    };
 
+    // Función principal que decide qué versión mostrar
+    const renderRecibo = (recibo) => {
+      if (modoDetalle) {
+        renderDetalleAdaptado(recibo);
+      } else {
+        renderResumen(recibo);
+      }
+      
       seleccionado = recibo;
       btnDescargar.disabled = false;
     };
 
     const limpiar = () => {
       seleccionado = null;
+      modoDetalle = false;
       btnDescargar.disabled = true;
       reciboContainer.classList.add('muted');
       reciboContainer.textContent = 'Sin selección.';
@@ -827,8 +1030,20 @@
 
     const descargarPNG = async () => {
       if (!seleccionado) return;
-      const nodo = document.getElementById('recibo-imprimible');
+      
+      // Crear elemento temporal oculto con formato original (500px)
+      const tempContainer = document.createElement('div');
+      tempContainer.style.position = 'absolute';
+      tempContainer.style.left = '-9999px';
+      tempContainer.style.top = '0';
+      tempContainer.innerHTML = generarReciboDescarga(seleccionado);
+      
+      document.body.appendChild(tempContainer);
+      await new Promise(resolve => setTimeout(resolve, 100));
+      
+      const nodo = tempContainer.querySelector('.recibo-imprimible');
       if (!nodo) return;
+      
       const canvas = await html2canvas(nodo, { scale: 2, backgroundColor: '#ffffff' });
       const padding = Math.round(56.7);
       const padded = document.createElement('canvas');
@@ -844,6 +1059,9 @@
       link.href = padded.toDataURL('image/png');
       link.download = `recibo_${nombre}.png`;
       link.click();
+      
+      // Eliminar el elemento temporal
+      document.body.removeChild(tempContainer);
     };
 
     document.getElementById('btnBuscar').addEventListener('click', buscar);
