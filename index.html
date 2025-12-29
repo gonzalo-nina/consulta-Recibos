@@ -749,9 +749,9 @@
       const deudaLect = recibo.deudas?.totales?.lectura || 0;
       
       const consumo = Number.parseFloat(recibo.ultimaLectura?.consumo || '0') || 0;
-      const montoConsumo = consumo < 5 ? 5 : consumo * 1.01;
+      const factor = recibo.ultimaLectura?.factor || 'Mínimo';
+      const montoConsumo = Number.parseFloat(recibo.ultimaLectura?.monto_total || '0') || 0;
       const gastosAdmin = 1;
-      const factor = consumo < 5 ? 'Mínimo' : '-';
       const grupo = recibo.puesto?.grupo || '-';
 
       reciboContainer.classList.remove('muted');
@@ -879,9 +879,9 @@
       const total = calcularTotal(recibo.ultimaLectura?.consumo, recibo.deudas);
       
       const consumo = Number.parseFloat(recibo.ultimaLectura?.consumo || '0') || 0;
-      const montoConsumo = consumo < 5 ? 5 : consumo * 1.01;
+      const factor = recibo.ultimaLectura?.factor || 'Mínimo';
+      const montoConsumo = Number.parseFloat(recibo.ultimaLectura?.monto_total || '0') || 0;
       const gastosAdmin = 1;
-      const factor = consumo < 5 ? 'Mínimo' : '-';
       const grupo = recibo.puesto?.grupo || '-';
 
       return `
