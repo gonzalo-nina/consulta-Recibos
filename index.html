@@ -29,27 +29,27 @@
       color: #222831 !important;
       font-size: 0.85rem;
       background-color: white !important;
-      padding: 16px;
+      padding: 20px;
       border: 1px solid #e5e7eb;
       border-radius: 10px;
     }
 
     .recibo-principal {
-      padding-bottom: 5px;
-      margin-bottom: 5px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
     }
 
     .recibo-header {
-      padding-bottom: 8px;
+      padding-bottom: 10px;
       border-bottom: 2px solid #2c5282;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
 
     .header-linea-1 {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 3px;
+      margin-bottom: 5px;
     }
 
     .empresa-titulo {
@@ -106,27 +106,28 @@
     }
 
     .recibo-cliente-datos-completos {
-      padding: 0 5px;
+      padding: 8px 10px;
     }
 
     .fila-datos {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6px;
-      margin-bottom: 2px;
+      gap: 8px;
+      margin-bottom: 6px;
     }
 
     .recibo-cliente {
-      margin-bottom: 6px;
+      margin-bottom: 10px;
     }
 
     .recibo-cliente h3 {
       background-color: #2c5282;
       color: white;
-      padding: 2px 6px;
+      padding: 4px 8px;
       font-size: 0.9rem;
+      font-weight: 700;
       margin-top: 0;
-      margin-bottom: 3px;
+      margin-bottom: 6px;
     }
 
     .recibo-cliente-datos {
@@ -137,9 +138,12 @@
     }
 
     .campo-recibo {
-      margin-bottom: 2px;
+      margin-bottom: 0;
       font-size: 0.85rem;
-      width: 300px;
+    }
+
+    .campo-recibo strong {
+      font-weight: 700;
     }
 
     .hola {
@@ -149,22 +153,23 @@
     .recibo-consumo h3 {
       background-color: #2c5282;
       color: white;
-      padding: 2px 6px;
+      padding: 4px 8px;
       font-size: 0.9rem;
+      font-weight: 700;
       margin-top: 0;
-      margin-bottom: 3px;
+      margin-bottom: 6px;
     }
 
     .tabla-consumo {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
       font-size: 0.75rem;
     }
 
     .tabla-consumo th, .tabla-consumo td {
       border: 1px solid #ddd;
-      padding: 3px 4px;
+      padding: 6px 8px;
       text-align: center;
       color: #222831 !important;
       background-color: white !important;
@@ -172,7 +177,7 @@
 
     .tabla-consumo th {
       background-color: #f0f4f8;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .deuda-otros-row {
@@ -194,71 +199,76 @@
     }
 
     .recibo-total {
-      text-align: right;
-      margin-right: 5px;
-      margin-top: 6px;
+      text-align: center;
+      margin-top: 12px;
+      margin-bottom: 12px;
     }
 
     .recibo-total h3 {
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: #222831;
       font-weight: 700;
+      margin: 0;
     }
 
     .recibo-nota {
-      margin-top: 6px;
-      font-size: 0.75rem;
-      font-style: italic;
-      color: #666;
-      padding-top: 3px;
+      margin-top: 10px;
+      font-size: 0.8rem;
+      padding-top: 8px;
       border-top: 1px dashed #ccc;
     }
 
     .recibo-comprobante {
       border-top: 1px dashed #aaa;
-      margin-top: 8px;
-      padding-top: 4px;
+      margin-top: 15px;
+      padding-top: 10px;
     }
 
     .comprobante-header {
       background-color: #edf2f7;
-      padding: 5px;
-      margin-bottom: 8px;
+      padding: 8px;
+      margin-bottom: 12px;
       text-align: center;
       color: #222831;
     }
 
     .comprobante-header h3 {
-      font-size: 1.1rem !important;
+      font-size: 0.95rem !important;
       text-align: center;
-      margin: 0 0 3px 0;
+      margin: 0 0 5px 0;
       color: #2c5282;
+      font-weight: 700;
     }
 
     .comprobante-header p {
       margin: 0;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
     }
 
     .comprobante-resumen {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 8px;
-      padding: 0 5px;
+      margin-bottom: 12px;
+      padding: 0 10px;
     }
 
     .comprobante-cliente p, 
     .comprobante-monto p {
-      margin: 3px 0;
-      font-size: 0.8rem;
+      margin: 5px 0;
+      font-size: 0.85rem;
       color: #222831;
+    }
+
+    .comprobante-cliente strong,
+    .comprobante-monto strong {
+      font-weight: 700;
     }
 
     .comprobante-firma {
       display: flex;
       justify-content: space-between;
-      margin-top: 1px;
-      padding: 0 5px;
+      margin-top: 15px;
+      padding: 0 10px;
     }
 
     .firma-cliente {
@@ -368,12 +378,13 @@
       background: #e6f7ff;
       padding: 3px 7px;
       border-radius: 4px;
-      font-weight: 500;
-      font-size: 0.85rem;
+      font-weight: 700;
+      font-size: 0.78rem;
       margin-bottom: 2px;
-      display: inline-block;
+      display: block;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
+      line-height: 1.4;
     }
 
     .nota-corte-resaltada {
