@@ -6,30 +6,638 @@
   <title>Consulta Pública de Recibos</title>
   <style>
     :root { color-scheme: light; }
-    body { font-family: "Segoe UI", Arial, sans-serif; margin: 0; padding: 24px; background: #f7f8fb; color: #1f2933; }
-    h1 { margin: 0 0 12px; font-size: 20px; color: #0f172a; }
-    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; box-shadow: 0 2px 6px rgba(15,23,42,0.06); padding: 16px; max-width: 640px; }
-    .row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    * { box-sizing: border-box; }
+    body { font-family: "Segoe UI", Arial, sans-serif; margin: 0; padding: 24px; background: #f5f6fa; color: #0f172a; }
+    h1 { margin: 0 0 8px; font-size: 22px; }
+    h2 { margin: 12px 0 8px; font-size: 18px; }
+    .layout { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 2px 10px rgba(15,23,42,0.06); padding: 16px; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
     input { flex: 1; min-width: 200px; padding: 10px 12px; border: 1px solid #cfd4dc; border-radius: 8px; font-size: 15px; }
     button { background: linear-gradient(135deg,#2563eb,#1d4ed8); color:#fff; border: none; border-radius: 8px; padding: 10px 16px; font-weight: 600; cursor: pointer; }
     button:hover { filter: brightness(1.05); }
-    .result { margin-top: 12px; padding: 12px; border-radius: 8px; border: 1px solid #e5e7eb; background: #f9fafb; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
     .muted { color: #6b7280; font-size: 14px; }
+    .status { margin-top: 10px; padding: 10px; border-radius: 8px; background: #f1f5f9; border: 1px solid #e2e8f0; }
+    .recibo-wrapper { margin-top: 12px; }
+    
+    /* Estilos del recibo */
+    .recibo-imprimible {
+      max-width: 500px;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+      color: #222831 !important;
+      font-size: 0.85rem;
+      background-color: white !important;
+      padding: 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+    }
+
+    .recibo-principal {
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+    }
+
+    .recibo-header {
+      padding-bottom: 8px;
+      border-bottom: 2px solid #2c5282;
+      margin-bottom: 8px;
+    }
+
+    .header-linea-1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3px;
+    }
+
+    .empresa-titulo {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .icono-empresa {
+      font-size: 1.2rem;
+      color: #2c5282;
+    }
+
+    .nombre-empresa {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2c5282;
+      letter-spacing: 0.5px;
+    }
+
+    .numero-recibo-principal {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #2c5282;
+      padding: 4px 8px;
+      background-color: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+    }
+
+    .header-linea-2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tipo-documento {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2c5282;
+      letter-spacing: 1px;
+    }
+
+    .fecha-periodo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+
+    .fecha-periodo span {
+      font-size: 0.8rem;
+      color: #4a5568;
+    }
+
+    .recibo-cliente-datos-completos {
+      padding: 0 5px;
+    }
+
+    .fila-datos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 2px;
+    }
+
+    .recibo-cliente {
+      margin-bottom: 6px;
+    }
+
+    .recibo-cliente h3 {
+      background-color: #2c5282;
+      color: white;
+      padding: 2px 6px;
+      font-size: 0.9rem;
+      margin-top: 0;
+      margin-bottom: 3px;
+    }
+
+    .recibo-cliente-datos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3px 8px;
+      padding: 0 5px;
+    }
+
+    .campo-recibo {
+      margin-bottom: 2px;
+      font-size: 0.85rem;
+      width: 300px;
+    }
+
+    .hola {
+      margin-left: 50px;
+    }
+
+    .recibo-consumo h3 {
+      background-color: #2c5282;
+      color: white;
+      padding: 2px 6px;
+      font-size: 0.9rem;
+      margin-top: 0;
+      margin-bottom: 3px;
+    }
+
+    .tabla-consumo {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 6px;
+      font-size: 0.75rem;
+    }
+
+    .tabla-consumo th, .tabla-consumo td {
+      border: 1px solid #ddd;
+      padding: 3px 4px;
+      text-align: center;
+      color: #222831 !important;
+      background-color: white !important;
+    }
+
+    .tabla-consumo th {
+      background-color: #f0f4f8;
+      font-weight: 600;
+    }
+
+    .deuda-otros-row {
+      background-color: #fef7e7 !important;
+    }
+
+    .deuda-lectura-row {
+      background-color: #f0f9ff !important;
+    }
+
+    .deuda-otros-row td, 
+    .deuda-lectura-row td {
+      font-style: italic;
+      color: #1f2937 !important;
+    }
+
+    .monto-pagar {
+      font-weight: bold;
+    }
+
+    .recibo-total {
+      text-align: right;
+      margin-right: 5px;
+      margin-top: 6px;
+    }
+
+    .recibo-total h3 {
+      font-size: 1rem;
+      color: #222831;
+      font-weight: 700;
+    }
+
+    .recibo-nota {
+      margin-top: 6px;
+      font-size: 0.75rem;
+      font-style: italic;
+      color: #666;
+      padding-top: 3px;
+      border-top: 1px dashed #ccc;
+    }
+
+    .recibo-comprobante {
+      border-top: 1px dashed #aaa;
+      margin-top: 8px;
+      padding-top: 4px;
+    }
+
+    .comprobante-header {
+      background-color: #edf2f7;
+      padding: 5px;
+      margin-bottom: 8px;
+      text-align: center;
+      color: #222831;
+    }
+
+    .comprobante-header h3 {
+      font-size: 1.1rem !important;
+      text-align: center;
+      margin: 0 0 3px 0;
+      color: #2c5282;
+    }
+
+    .comprobante-header p {
+      margin: 0;
+      font-size: 0.8rem;
+    }
+
+    .comprobante-resumen {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      padding: 0 5px;
+    }
+
+    .comprobante-cliente p, 
+    .comprobante-monto p {
+      margin: 3px 0;
+      font-size: 0.8rem;
+      color: #222831;
+    }
+
+    .comprobante-firma {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1px;
+      padding: 0 5px;
+    }
+
+    .firma-cliente {
+      text-align: center;
+      width: 150px;
+      color: #222831;
+    }
+
+    .linea-firma {
+      border-bottom: 1px solid #222831;
+      margin-bottom: 1px;
+      height: 20px;
+    }
+
+    .firma-cliente p {
+      margin-top: 2px;
+      margin-bottom: 0;
+      font-size: 0.9rem;
+    }
+
+    .fecha-pago {
+      font-size: 0.8rem;
+      color: #222831;
+      margin-top: 0px;
+    }
+
+    .info-contacto {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0px;
+      margin-top: -5px;
+    }
+
+    .telefono-pago {
+      font-size: 0.7rem;
+      color: #222831;
+      margin-bottom: 2px;
+    }
+
+    .recibo-transaccion {
+      margin-bottom: 15px;
+      padding: 8px;
+      background-color: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 4px;
+    }
+
+    .recibo-transaccion h3 {
+      background-color: #ea580c;
+      color: white;
+      padding: 4px 8px;
+      font-size: 0.85rem;
+      margin: -8px -8px 8px -8px;
+      border-radius: 3px 3px 0 0;
+    }
+
+    .transaccion-detalle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+
+    .transaccion-descripcion {
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    .transaccion-monto {
+      text-align: right;
+      font-weight: bold;
+    }
+
+    .monto-deuda {
+      color: #dc2626;
+    }
+
+    .monto-devolucion {
+      color: #059669;
+    }
+
+    .monto-detalle {
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .total-destacado {
+      background-color: #f7fafc;
+      border: 2px solid #2c5282;
+      border-radius: 4px;
+      padding: 8px;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .total-destacado p {
+      margin: 0;
+      font-size: 0.9rem !important;
+      font-weight: bold;
+      color: #2c5282;
+    }
+
+    .nota-pago-resaltada {
+      color: #2c5282;
+      background: #e6f7ff;
+      padding: 3px 7px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      margin-bottom: 2px;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .nota-corte-resaltada {
+      color: #2c5282;
+      background: #e6f7ff;
+      padding: 3px 7px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 0.92rem;
+      margin-bottom: 2px;
+      display: block;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .nota-corte-resaltada strong {
+      color: #d97706;
+      background: #fffbe6;
+      padding: 0 3px;
+      border-radius: 2px;
+      font-weight: 700;
+      font-size: 1.02em;
+      letter-spacing: 1px;
+    }
+
+    .recibo-deudas-lectura,
+    .recibo-deudas-otros {
+      margin: 15px 0;
+      padding: 12px;
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+    }
+
+    .recibo-deudas-lectura h3 {
+      color: #dc3545;
+      font-size: 0.9rem;
+      margin: 0 0 10px 0;
+      text-align: center;
+      background-color: #f8d7da;
+      padding: 6px;
+      border-radius: 4px;
+      border: 1px solid #f5c6cb;
+    }
+
+    .recibo-deudas-otros h3 {
+      color: #fd7e14;
+      font-size: 0.9rem;
+      margin: 0 0 10px 0;
+      text-align: center;
+      background-color: #fff3cd;
+      padding: 6px;
+      border-radius: 4px;
+      border: 1px solid #ffeaa7;
+    }
+
+    .tabla-deudas {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+    }
+
+    .tabla-deudas th,
+    .tabla-deudas td {
+      padding: 6px 8px;
+      text-align: left;
+      border: 1px solid #dee2e6;
+    }
+
+    .tabla-deudas th {
+      background-color: #e9ecef;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tabla-deudas td:last-child,
+    .tabla-deudas th:last-child {
+      text-align: right;
+    }
+
+    .tabla-deudas .total-row {
+      background-color: #f8f9fa;
+      border-top: 2px solid #6c757d;
+    }
+
+    .tabla-deudas .total-row td {
+      font-weight: 600;
+      color: #495057;
+    }
+
+    .desglose-total {
+      margin-top: 8px;
+      padding: 8px;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+
+    .desglose-total p {
+      margin: 2px 0;
+      display: flex;
+      justify-content: space-between;
+      color: #6c757d;
+    }
+
+    .recibo-section { margin-bottom: 10px; }
+    .recibo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 12px; }
+    .recibo-table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+    .recibo-table th, .recibo-table td { border: 1px solid #e5e7eb; padding: 6px; text-align: left; font-size: 14px; }
+    .totales { font-weight: 700; font-size: 16px; margin-top: 8px; }
+
+    @media print {
+      .recibo-imprimible {
+        width: 190mm;
+        max-width: 190mm;
+        height: 135mm;
+        margin: 0;
+        page-break-inside: avoid;
+        font-size: 9pt;
+        padding: 8mm;
+        box-sizing: border-box;
+      }
+      
+      body {
+        background: white;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .recibo-header {
+        padding-bottom: 8px;
+        margin-bottom: 10px;
+      }
+      
+      .recibo-cliente h3,
+      .recibo-consumo h3 {
+        padding: 5px 8px;
+        font-size: 11pt;
+        margin-bottom: 8px;
+        color: #222831;
+      }
+      
+      .tabla-consumo th, 
+      .tabla-consumo td {
+        padding: 5px;
+        font-size: 9pt;
+        color: #222831;
+      }
+
+      .recibo-principal {
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+      }
+      
+      .recibo-comprobante {
+        border-top: 1px dashed #999;
+        margin-top: 5px;
+        padding-top: 5px;
+      }
+
+      .recibo-transaccion {
+        margin-bottom: 8px;
+        padding: 5px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+      }
+      
+      .recibo-transaccion h3 {
+        font-size: 10pt;
+        padding: 3px 6px;
+        margin: -5px -5px 5px -5px;
+      }
+      
+      .transaccion-detalle {
+        font-size: 9pt;
+      }
+
+      .recibo-deudas-lectura,
+      .recibo-deudas-otros {
+        background-color: white !important;
+        border: 1px solid #000 !important;
+      }
+      
+      .recibo-deudas-lectura h3,
+      .recibo-deudas-otros h3 {
+        background-color: white !important;
+        border: 1px solid #000 !important;
+        color: #000 !important;
+      }
+      
+      .tabla-deudas th {
+        background-color: #f0f0f0 !important;
+      }
+      
+      .desglose-total {
+        background-color: white !important;
+        border: 1px solid #000 !important;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .recibo-imprimible {
+        font-size: 0.8rem;
+      }
+      
+      .recibo-header {
+        padding-bottom: 8px;
+        margin-bottom: 10px;
+      }
+      
+      .recibo-cliente-datos {
+        gap: 3px 8px;
+      }
+      
+      .tabla-consumo th, .tabla-consumo td {
+        padding: 3px 5px;
+      }
+      
+      .comprobante-resumen {
+        margin-bottom: 5px;
+      }
+      
+      .comprobante-firma {
+        margin-top: 10px;
+      }
+      
+      .linea-firma {
+        height: 15px;
+      }
+    }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
 </head>
 <body>
-  <div class="card">
-    <h1>Consulta Pública de Recibos</h1>
-    <div class="row">
-      <input id="busqueda" placeholder="Ej: A-01" />
-      <button onclick="buscar()">Buscar</button>
+  <div class="layout">
+    <div class="card">
+      <h1>Consulta Pública de Recibos</h1>
+      <div class="row">
+        <input id="busqueda" placeholder="Ej: A-01" />
+        <button id="btnBuscar">Buscar</button>
+        <button id="btnLimpiar" style="background:#6b7280;">Limpiar</button>
+      </div>
+      <div class="status" id="status">Cargando datos...</div>
+      <div class="row" style="margin-top:8px;">
+        <button id="btnDescargar" disabled>📥 Descargar PNG</button>
+      </div>
     </div>
-    <div class="muted">Ingresa el número de puesto tal como figura en el recibo.</div>
-    <div id="resultado" class="result muted">Cargando datos...</div>
+
+    <div class="card">
+      <h2>Recibo</h2>
+      <div id="recibo-container" class="recibo-wrapper muted">Sin selección.</div>
+    </div>
   </div>
 
   <script>
     let data = null;
+    let seleccionado = null;
+    let config = {};
+    const statusEl = document.getElementById('status');
+    const reciboContainer = document.getElementById('recibo-container');
+    const btnDescargar = document.getElementById('btnDescargar');
     const base = location.pathname.endsWith('/') ? location.pathname : location.pathname + '/';
 
     const tryFetch = async (url) => {
@@ -38,38 +646,218 @@
       return r.json();
     };
 
-    (async () => {
+    const redondear05 = (v) => Math.round(v * 20) / 20;
+
+    const calcularTotal = (consumoStr, deudas) => {
+      const consumo = Number.parseFloat(consumoStr || '0') || 0;
+      let montoConsumo = consumo < 5 ? 5 : consumo * 1.01;
+      const gastosAdmin = 1;
+      let total = redondear05(montoConsumo) + redondear05(gastosAdmin);
+      const extra = deudas?.totales?.general || 0;
+      total += extra;
+      return redondear05(total);
+    };
+
+    const renderRecibo = (recibo) => {
+      const cfg = config || {};
+      const periodo = cfg.periodo ? `${cfg.periodo}-${(cfg.anio || '').toString().slice(-2)}` : '-';
+      const fecha = cfg.fecha || new Date().toLocaleDateString('es-PE');
+      const total = calcularTotal(recibo.ultimaLectura?.consumo, recibo.deudas);
+
+      const deudaOtros = recibo.deudas?.totales?.otros || 0;
+      const deudaLect = recibo.deudas?.totales?.lectura || 0;
+      
+      const consumo = Number.parseFloat(recibo.ultimaLectura?.consumo || '0') || 0;
+      const montoConsumo = consumo < 5 ? 5 : consumo * 1.01;
+      const gastosAdmin = 1;
+      const factor = consumo < 5 ? 'Mínimo' : '-';
+      const grupo = recibo.puesto?.grupo || '-';
+
+      reciboContainer.classList.remove('muted');
+      reciboContainer.innerHTML = `
+        <div class="recibo-imprimible" id="recibo-imprimible">
+          <!-- RECIBO PRINCIPAL -->
+          <div class="recibo-principal">
+            <div class="recibo-header">
+              <div class="header-linea-1">
+                <div class="empresa-titulo">
+                  <span class="icono-empresa">⚡</span>
+                  <span class="nombre-empresa">PROYECTO DE ELECTRIFICACION</span>
+                </div>
+                <div class="numero-recibo-principal">N° ${String(recibo.ultimaLectura?.id || '').padStart(6, '0')}</div>
+              </div>
+              <div class="header-linea-2">
+                <div class="tipo-documento">RECIBO DE LUZ</div>
+                <div class="fecha-periodo">
+                  <span>Fecha: ${fecha}</span>
+                  <span>Período: ${periodo}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- DATOS DEL CLIENTE -->
+            <div class="recibo-cliente">
+              <h3>DATOS DEL CLIENTE</h3>
+              <div class="recibo-cliente-datos-completos">
+                <div class="fila-datos">
+                  <div class="campo-recibo"><strong>Propietario:</strong> ${recibo.puesto?.propietario || '-'}</div>
+                  <div class="campo-recibo"><strong>DNI:</strong> ${recibo.puesto?.dni || '-'}</div>
+                </div>
+                <div class="fila-datos">
+                  <div class="campo-recibo"><strong>Puesto:</strong> ${recibo.puesto?.numero_puesto || '-'}</div>
+                  <div class="campo-recibo"><strong>Medidor:</strong> ${recibo.puesto?.numero_medidor || '-'} (G${grupo})</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- DETALLE DE CONSUMO -->
+            <div class="recibo-consumo">
+              <h3>DETALLE DE CONSUMO</h3>
+              <table class="tabla-consumo">
+                <thead>
+                  <tr>
+                    <th>Lectura Anterior</th>
+                    <th>Lectura Actual</th>
+                    <th>Consumo (kWh)</th>
+                    <th>Factor</th>
+                    <th>Monto</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>${Number.parseFloat(recibo.ultimaLectura?.lectura_anterior || 0).toFixed(2)}</td>
+                    <td>${Number.parseFloat(recibo.ultimaLectura?.lectura_actual || 0).toFixed(2)}</td>
+                    <td>${consumo}</td>
+                    <td>${factor}</td>
+                    <td>S/. ${redondear05(montoConsumo).toFixed(2)}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">Gastos administrativos</td>
+                    <td>-</td>
+                    <td>S/. ${gastosAdmin.toFixed(2)}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- TOTAL A PAGAR -->
+            <div class="recibo-total">
+              <h3>TOTAL A PAGAR: S/. ${total.toFixed(2)}</h3>
+            </div>
+
+            <!-- NOTAS -->
+            <div class="recibo-nota">
+              <p class="nota-pago-resaltada">
+                Realice su pago los días ${cfg.diaPago1 ?? '-'} de diciembre y ${cfg.diaPago2 ?? '-'} de diciembre<br>
+                de 11 am a 1 pm. (O hasta las 3 pm. en puesto 90)
+              </p>
+              <p class="nota-corte-resaltada">
+                FECHA DE CORTE <strong>${cfg.diaCorte ?? '-'} DE DICIEMBRE</strong>.
+              </p>
+            </div>
+          </div>
+
+          <!-- COMPROBANTE DE PAGO -->
+          <div class="recibo-comprobante">
+            <div class="comprobante-header">
+              <h3>⚡ RECIBO DE PAGO - PROYECTO ELECTRIFICACION</h3>
+              <p>Recibo N° ${String(recibo.ultimaLectura?.id || '').padStart(6, '0')} | Período: ${periodo}</p>
+            </div>
+
+            <div class="comprobante-resumen">
+              <div class="comprobante-cliente">
+                <p><strong>Propietario:</strong> ${recibo.puesto?.propietario || '-'}</p>
+                <p><strong>Puesto:</strong> ${recibo.puesto?.numero_puesto || '-'} (Grupo ${grupo})</p>
+              </div>
+              <div class="comprobante-monto">
+                <p><strong>Total a pagar:</strong> S/. ${total.toFixed(2)}</p>
+              </div>
+            </div>
+
+            <div class="comprobante-firma">
+              <div class="firma-cliente">
+                <div class="linea-firma"></div>
+                <p>Firma</p>
+              </div>
+              <div class="info-contacto">
+                <p class="fecha-pago">Fecha de pago: ___/___/______</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      seleccionado = recibo;
+      btnDescargar.disabled = false;
+    };
+
+    const limpiar = () => {
+      seleccionado = null;
+      btnDescargar.disabled = true;
+      reciboContainer.classList.add('muted');
+      reciboContainer.textContent = 'Sin selección.';
+    };
+
+    const buscar = () => {
+      const input = document.getElementById('busqueda');
+      const q = (input.value || '').trim().toLowerCase();
+      if (!data) { statusEl.textContent = 'Datos no cargados.'; return; }
+      if (!q) { statusEl.textContent = 'Ingresa un número de puesto.'; limpiar(); return; }
+
+      const hallado = (data.recibos || []).find(r => (r.puesto?.numero_puesto || '').toLowerCase() === q);
+      if (!hallado) {
+        statusEl.textContent = 'No se encontró el puesto.';
+        limpiar();
+        return;
+      }
+      statusEl.textContent = 'Recibo encontrado.';
+      renderRecibo(hallado);
+    };
+
+    const descargarPNG = async () => {
+      if (!seleccionado) return;
+      const nodo = document.getElementById('recibo-imprimible');
+      if (!nodo) return;
+      const canvas = await html2canvas(nodo, { scale: 2, backgroundColor: '#ffffff' });
+      const padding = Math.round(56.7);
+      const padded = document.createElement('canvas');
+      padded.width = canvas.width + padding * 2;
+      padded.height = canvas.height + padding * 2;
+      const ctx = padded.getContext('2d');
+      if (!ctx) return;
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0,0,padded.width,padded.height);
+      ctx.drawImage(canvas, padding, padding);
+      const link = document.createElement('a');
+      const nombre = (seleccionado.puesto?.numero_puesto || 'recibo').replaceAll(/\s+/g, '_');
+      link.href = padded.toDataURL('image/png');
+      link.download = `recibo_${nombre}.png`;
+      link.click();
+    };
+
+    document.getElementById('btnBuscar').addEventListener('click', buscar);
+    document.getElementById('btnLimpiar').addEventListener('click', () => { document.getElementById('busqueda').value=''; limpiar(); statusEl.textContent='Listo.'; });
+    btnDescargar.addEventListener('click', descargarPNG);
+
+    const cargarDatos = async () => {
       try {
         data = await tryFetch(base + 'recibos.json');
-        document.getElementById('resultado').textContent = 'Datos cargados. Busca un puesto.';
-      } catch {
+        config = data.configuracion || {};
+        statusEl.textContent = 'Datos cargados. Busca un puesto.';
+      } catch (errorPrincipal) {
+        console.warn('Fallo recibos.json', errorPrincipal);
         try {
           data = await tryFetch(base + 'recibos-demo.json');
-          document.getElementById('resultado').textContent = 'Usando datos de demostración. Busca un puesto.';
-        } catch (error) {
-          document.getElementById('resultado').textContent = 'No se pudieron cargar datos.';
+          config = data.configuracion || {};
+          statusEl.textContent = 'Usando datos de demostración. Busca un puesto.';
+        } catch (errorDemo) {
+          console.error('Fallo demo', errorDemo);
+          statusEl.textContent = 'No se pudieron cargar datos.';
         }
       }
-    })();
+    };
 
-    function buscar() {
-      const el = document.getElementById('resultado');
-      if (!data) { el.textContent = 'Datos no cargados aún.'; return; }
-      const q = (document.getElementById('busqueda').value || '').trim().toLowerCase();
-      if (!q) { el.textContent = 'Ingresa un número de puesto.'; return; }
-
-      const recibo = (data.recibos || []).find(r => (r.puesto?.numero_puesto || '').toLowerCase() === q);
-      if (!recibo) { el.textContent = 'No encontrado.'; return; }
-
-      const cfg = data.configuracion || {};
-      el.innerHTML = `
-        <div><strong>Puesto:</strong> ${recibo.puesto.numero_puesto}</div>
-        <div><strong>Propietario:</strong> ${recibo.puesto.propietario || '-'}</div>
-        <div><strong>Consumo:</strong> ${recibo.ultimaLectura?.consumo ?? '-'} kWh</div>
-        <div><strong>Período:</strong> ${cfg.periodo ?? '-'}-${cfg.anio ?? '-'}</div>
-        <div class="muted">Días de pago: ${cfg.diaPago1 ?? '-'}, ${cfg.diaPago2 ?? '-'} — Corte: ${cfg.diaCorte ?? '-'}</div>
-      `;
-    }
+    cargarDatos();
   </script>
 </body>
 </html>
