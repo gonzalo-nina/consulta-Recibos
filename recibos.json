@@ -2,127 +2,3230 @@
   "configuracion": {
     "periodo": "Diciembre",
     "anio": "2028",
-    "fecha": "28/12/2029",
-    "diaPago1": 20,
-    "diaPago2": 21,
-    "diaCorte": 25
+    "fecha": "28/12/2025",
+    "diaPago1": 21,
+    "diaPago2": 22,
+    "diaCorte": 29
   },
   "recibos": [
     {
       "puesto": {
-      "id": 101,
-      "numero_puesto": "A-01",
-      "propietario": "Maria López",
-      "dni": "12345678",
-      "grupo": 1,
-      "numero_medidor": "MD-1001"
+        "id": 3,
+        "numero_puesto": "1",
+        "propietario": "ADELINA BLAS ROLDAN",
+        "dni": "",
+        "grupo": 2,
+        "numero_medidor": "202301001653",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 518,
+        "id_puesto": 3,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "173.10",
+        "lectura_actual": "205.00",
+        "consumo": "31.90",
+        "monto_total": "32.22"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
     },
-    "ultimaLectura": {
-      "id": 5001,
-      "fecha": "2025-12-01",
-      "lectura_anterior": 1200,
-      "lectura_actual": 1280,
-      "consumo": "80"
+    {
+      "puesto": {
+        "id": 18,
+        "numero_puesto": "101",
+        "propietario": "SANCHEZ BRIONES MANUEL",
+        "dni": "32763760",
+        "grupo": 2,
+        "numero_medidor": "202301003225",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 533,
+        "id_puesto": 18,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "88.60",
+        "lectura_actual": "103.20",
+        "consumo": "14.60",
+        "monto_total": "14.75"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
     },
-    "deudas": {
-      "lectura": [],
-      "otros": [],
-      "totales": { "lectura": 0, "otros": 0, "general": 0 }
+    {
+      "puesto": {
+        "id": 19,
+        "numero_puesto": "102",
+        "propietario": "AMELIA AGUILAR CABRERA",
+        "dni": "",
+        "grupo": 2,
+        "numero_medidor": "202301005214",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 534,
+        "id_puesto": 19,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "11.90",
+        "lectura_actual": "13.70",
+        "consumo": "1.80",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 51,
+        "numero_puesto": "108",
+        "propietario": "FERRE YENGLE FRANCISCO",
+        "dni": "32954795",
+        "grupo": 1,
+        "numero_medidor": "202301002437",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 456,
+        "id_puesto": 51,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "155.60",
+        "lectura_actual": "166.50",
+        "consumo": "10.90",
+        "monto_total": "11.01"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 8,
+        "numero_puesto": "11",
+        "propietario": "GALLARDO CHAVEZ SONIA",
+        "dni": "41447375",
+        "grupo": 2,
+        "numero_medidor": "2022120191256",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 523,
+        "id_puesto": 8,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "251.90",
+        "lectura_actual": "314.00",
+        "consumo": "62.10",
+        "monto_total": "62.72"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 52,
+        "numero_puesto": "110",
+        "propietario": "LEZAMA ASCOY JULIO OSWALDO",
+        "dni": "40676640",
+        "grupo": 1,
+        "numero_medidor": "202301001926",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 457,
+        "id_puesto": 52,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "32.90",
+        "lectura_actual": "39.10",
+        "consumo": "6.20",
+        "monto_total": "6.26"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 53,
+        "numero_puesto": "114",
+        "propietario": "MENDOZA DE TORRES MARIA",
+        "dni": "32955331",
+        "grupo": 1,
+        "numero_medidor": "202301002840",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 458,
+        "id_puesto": 53,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "192.30",
+        "lectura_actual": "232.80",
+        "consumo": "40.50",
+        "monto_total": "40.91"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 54,
+        "numero_puesto": "115",
+        "propietario": "ALAYO DE LOPEZ MARIA",
+        "dni": "32857679",
+        "grupo": 1,
+        "numero_medidor": "202301003176",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 459,
+        "id_puesto": 54,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "0.10",
+        "lectura_actual": "0.10",
+        "consumo": "0.00",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 55,
+        "numero_puesto": "116",
+        "propietario": "SANCHEZ SARMIENTO",
+        "dni": "32953278",
+        "grupo": 1,
+        "numero_medidor": "202301003246",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 460,
+        "id_puesto": 55,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "22.90",
+        "lectura_actual": "28.40",
+        "consumo": "5.50",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 56,
+        "numero_puesto": "120",
+        "propietario": "DIAZ TORRES LILIANA ELIZABETH",
+        "dni": "32953254",
+        "grupo": 1,
+        "numero_medidor": "202301000955",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 461,
+        "id_puesto": 56,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "12.50",
+        "lectura_actual": "16.70",
+        "consumo": "4.20",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 57,
+        "numero_puesto": "123",
+        "propietario": "LARA DE DIAZ TEODOLINDA",
+        "dni": "32736130",
+        "grupo": 1,
+        "numero_medidor": "202301001339",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 462,
+        "id_puesto": 57,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "22.90",
+        "lectura_actual": "22.90",
+        "consumo": "0.00",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 58,
+        "numero_puesto": "124",
+        "propietario": "RODRIGUEZ FAJARDO RUSBEL",
+        "dni": "32832493",
+        "grupo": 1,
+        "numero_medidor": "202301002838",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 463,
+        "id_puesto": 58,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "344.90",
+        "lectura_actual": "461.70",
+        "consumo": "116.80",
+        "monto_total": "117.97"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 59,
+        "numero_puesto": "125",
+        "propietario": "GAMARRA VELASQUEZ DELIA",
+        "dni": "32736155",
+        "grupo": 1,
+        "numero_medidor": "202301005709",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 464,
+        "id_puesto": 59,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "87.90",
+        "lectura_actual": "124.20",
+        "consumo": "36.30",
+        "monto_total": "36.66"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 60,
+        "numero_puesto": "126",
+        "propietario": "URSULA MEREIDA SOLANO",
+        "dni": "32833874",
+        "grupo": 1,
+        "numero_medidor": "202301004139",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 465,
+        "id_puesto": 60,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "63.90",
+        "lectura_actual": "63.90",
+        "consumo": "0.00",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 61,
+        "numero_puesto": "127",
+        "propietario": "ALAYO MOZO MARCIONILA",
+        "dni": "32804787",
+        "grupo": 1,
+        "numero_medidor": "202301004134",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 466,
+        "id_puesto": 61,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "38.90",
+        "lectura_actual": "54.10",
+        "consumo": "15.20",
+        "monto_total": "15.35"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 62,
+        "numero_puesto": "128",
+        "propietario": "LIDIA PALOMINO FLORES",
+        "dni": "32980950",
+        "grupo": 1,
+        "numero_medidor": "202301004396",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 467,
+        "id_puesto": 62,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "114.90",
+        "lectura_actual": "136.20",
+        "consumo": "21.30",
+        "monto_total": "21.51"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 63,
+        "numero_puesto": "130",
+        "propietario": "ELIZA YOLANDO LOPEZ ORBEGOZO",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301003981",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 468,
+        "id_puesto": 63,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "161.90",
+        "lectura_actual": "195.30",
+        "consumo": "33.40",
+        "monto_total": "33.73"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 64,
+        "numero_puesto": "131",
+        "propietario": "CAMPOS NUÑEZ SANTOS",
+        "dni": "19040860",
+        "grupo": 1,
+        "numero_medidor": "202301004454",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 469,
+        "id_puesto": 64,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "230.50",
+        "lectura_actual": "274.90",
+        "consumo": "44.40",
+        "monto_total": "44.84"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 65,
+        "numero_puesto": "132",
+        "propietario": "CHAVEZ HUAMAN OSCAR",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301003243",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 470,
+        "id_puesto": 65,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "374.50",
+        "lectura_actual": "433.20",
+        "consumo": "58.70",
+        "monto_total": "59.29"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 66,
+        "numero_puesto": "134",
+        "propietario": "JULIANA MIRANDA ORBEGOZO",
+        "dni": "32979904",
+        "grupo": 1,
+        "numero_medidor": "202301005222",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 471,
+        "id_puesto": 66,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "108.80",
+        "lectura_actual": "125.80",
+        "consumo": "17.00",
+        "monto_total": "17.17"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 67,
+        "numero_puesto": "136",
+        "propietario": "ORDINOLA STEELE ANTONIO LUIS",
+        "dni": "43376072",
+        "grupo": 1,
+        "numero_medidor": "202301004140",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 472,
+        "id_puesto": 67,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "98.60",
+        "lectura_actual": "115.00",
+        "consumo": "16.40",
+        "monto_total": "16.56"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 68,
+        "numero_puesto": "137",
+        "propietario": "OBREGON ARMAS GUILLERMINA",
+        "dni": "32849358",
+        "grupo": 1,
+        "numero_medidor": "202301003247",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 473,
+        "id_puesto": 68,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "44.70",
+        "lectura_actual": "54.60",
+        "consumo": "9.90",
+        "monto_total": "10.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 69,
+        "numero_puesto": "139",
+        "propietario": "VALOIS PONTE ELENA",
+        "dni": "32777422",
+        "grupo": 1,
+        "numero_medidor": "202301005985",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 474,
+        "id_puesto": 69,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "0.10",
+        "lectura_actual": "0.10",
+        "consumo": "0.00",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 70,
+        "numero_puesto": "142",
+        "propietario": "JULIA CHAVARRIA DE PEREZ",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301005701",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 475,
+        "id_puesto": 70,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "1116.70",
+        "lectura_actual": "1285.90",
+        "consumo": "169.20",
+        "monto_total": "170.89"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 71,
+        "numero_puesto": "148",
+        "propietario": "CONSUELO MAGALY MARIÑOS ZULIGA",
+        "dni": "32736450",
+        "grupo": 1,
+        "numero_medidor": "202301000",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 476,
+        "id_puesto": 71,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "288.10",
+        "lectura_actual": "333.10",
+        "consumo": "45.00",
+        "monto_total": "45.45"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 72,
+        "numero_puesto": "150",
+        "propietario": "GOMEZ DE PLASENCIA GIOVANA",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301001651",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 477,
+        "id_puesto": 72,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "301.10",
+        "lectura_actual": "356.70",
+        "consumo": "55.60",
+        "monto_total": "56.16"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 73,
+        "numero_puesto": "155",
+        "propietario": "ROSARIO ZENAIDA BUSTAMANTE",
+        "dni": "32846211",
+        "grupo": 1,
+        "numero_medidor": "202301000411",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 478,
+        "id_puesto": 73,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "24.60",
+        "lectura_actual": "29.70",
+        "consumo": "5.10",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 74,
+        "numero_puesto": "156",
+        "propietario": "ADELMIRO SANCHEZ BRIONES",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301000302",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 479,
+        "id_puesto": 74,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "52.30",
+        "lectura_actual": "62.90",
+        "consumo": "10.60",
+        "monto_total": "10.71"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 75,
+        "numero_puesto": "159",
+        "propietario": "SARA MEDINA VILLEGAS",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301000299",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 480,
+        "id_puesto": 75,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "66.40",
+        "lectura_actual": "82.90",
+        "consumo": "16.50",
+        "monto_total": "16.67"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 9,
+        "numero_puesto": "15A",
+        "propietario": "VICTORIANA BEDON SARMIENTO",
+        "dni": "",
+        "grupo": 2,
+        "numero_medidor": "20230100292",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 524,
+        "id_puesto": 9,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "262.70",
+        "lectura_actual": "322.70",
+        "consumo": "60.00",
+        "monto_total": "60.60"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 76,
+        "numero_puesto": "160",
+        "propietario": "FLORES TEVEZ ROSA MARCELINA",
+        "dni": "32950817",
+        "grupo": 1,
+        "numero_medidor": "202301000022",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 481,
+        "id_puesto": 76,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "119.50",
+        "lectura_actual": "147.10",
+        "consumo": "27.60",
+        "monto_total": "27.88"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 77,
+        "numero_puesto": "162",
+        "propietario": "CALDERON CRUZ JUSTINA",
+        "dni": "32955388",
+        "grupo": 1,
+        "numero_medidor": "202301000301",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 482,
+        "id_puesto": 77,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "48.70",
+        "lectura_actual": "57.20",
+        "consumo": "8.50",
+        "monto_total": "8.59"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 78,
+        "numero_puesto": "164",
+        "propietario": "MATOS NELIDA ANDREA",
+        "dni": "43978948",
+        "grupo": 1,
+        "numero_medidor": "202301002785",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 483,
+        "id_puesto": 78,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "199.50",
+        "lectura_actual": "230.70",
+        "consumo": "31.20",
+        "monto_total": "31.51"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 79,
+        "numero_puesto": "165",
+        "propietario": "CAROL DEYSI ALEJANDRO",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301000290",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 484,
+        "id_puesto": 79,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "356.60",
+        "lectura_actual": "431.70",
+        "consumo": "75.10",
+        "monto_total": "75.85"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 80,
+        "numero_puesto": "166",
+        "propietario": "ELSA ANDREA FLORES GUTIERREZ",
+        "dni": "32849427",
+        "grupo": 1,
+        "numero_medidor": "202301001598",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 485,
+        "id_puesto": 80,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "158.80",
+        "lectura_actual": "182.60",
+        "consumo": "23.80",
+        "monto_total": "24.04"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 81,
+        "numero_puesto": "167",
+        "propietario": "LUJAN FLORES ROGER",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301000041",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 486,
+        "id_puesto": 81,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "72.80",
+        "lectura_actual": "119.20",
+        "consumo": "46.40",
+        "monto_total": "46.86"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 82,
+        "numero_puesto": "173",
+        "propietario": "RAMOS MORALES FIDENCIA",
+        "dni": "32825064",
+        "grupo": 1,
+        "numero_medidor": "202301000050",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 487,
+        "id_puesto": 82,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "248.90",
+        "lectura_actual": "300.70",
+        "consumo": "51.80",
+        "monto_total": "52.32"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 83,
+        "numero_puesto": "174",
+        "propietario": "SOLORZANO JIMENEZ VIRGINIA",
+        "dni": "32831385",
+        "grupo": 1,
+        "numero_medidor": "202301000419",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 488,
+        "id_puesto": 83,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "257.10",
+        "lectura_actual": "311.70",
+        "consumo": "54.60",
+        "monto_total": "55.15"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 84,
+        "numero_puesto": "179",
+        "propietario": "MEZA RAZA KARINA MAGALI",
+        "dni": "40982367",
+        "grupo": 1,
+        "numero_medidor": "202301004123",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 489,
+        "id_puesto": 84,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "124.50",
+        "lectura_actual": "144.50",
+        "consumo": "20.00",
+        "monto_total": "20.20"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 10,
+        "numero_puesto": "18",
+        "propietario": "BARBHARA ISABEL SEIJAS REYES",
+        "dni": "41148466",
+        "grupo": 2,
+        "numero_medidor": "202301004237",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 525,
+        "id_puesto": 10,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "0.20",
+        "lectura_actual": "0.20",
+        "consumo": "0.00",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 85,
+        "numero_puesto": "180",
+        "propietario": "VAZQUEZ VARGAS FRANCISCO",
+        "dni": "32945616",
+        "grupo": 1,
+        "numero_medidor": "202301000021",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 490,
+        "id_puesto": 85,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "12.90",
+        "lectura_actual": "13.80",
+        "consumo": "0.90",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 86,
+        "numero_puesto": "186",
+        "propietario": "LOURDES MENDEZ SAENZ",
+        "dni": "46175017",
+        "grupo": 1,
+        "numero_medidor": "202301004430",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 491,
+        "id_puesto": 86,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "173.80",
+        "lectura_actual": "204.00",
+        "consumo": "30.20",
+        "monto_total": "30.50"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 87,
+        "numero_puesto": "188",
+        "propietario": "KUSAKA DE CHIRA",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301002991",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 492,
+        "id_puesto": 87,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "324.10",
+        "lectura_actual": "409.60",
+        "consumo": "85.50",
+        "monto_total": "86.36"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 11,
+        "numero_puesto": "19",
+        "propietario": "IBAÑEZ RIOS AURELINA",
+        "dni": "32950985",
+        "grupo": 2,
+        "numero_medidor": "202301006131",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 526,
+        "id_puesto": 11,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "42.90",
+        "lectura_actual": "52.20",
+        "consumo": "9.30",
+        "monto_total": "9.39"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 88,
+        "numero_puesto": "191",
+        "propietario": "CHAUPE HINOJOSA SUSANA",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301000553",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 493,
+        "id_puesto": 88,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "277.10",
+        "lectura_actual": "331.70",
+        "consumo": "54.60",
+        "monto_total": "55.15"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 89,
+        "numero_puesto": "193",
+        "propietario": "VELASQUEZ BONIFACIO ADELY",
+        "dni": "40491331",
+        "grupo": 1,
+        "numero_medidor": "202301000429",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 494,
+        "id_puesto": 89,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "532.40",
+        "lectura_actual": "634.30",
+        "consumo": "101.90",
+        "monto_total": "102.92"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 90,
+        "numero_puesto": "195",
+        "propietario": "SALAZAR MONTENEGRO",
+        "dni": "32949939",
+        "grupo": 1,
+        "numero_medidor": "202301005963",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 495,
+        "id_puesto": 90,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "169.70",
+        "lectura_actual": "201.10",
+        "consumo": "31.40",
+        "monto_total": "31.71"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 1,
+        "numero_puesto": "1A",
+        "propietario": "OFICINA DE LA ADMINISTRACION",
+        "dni": "",
+        "grupo": 2,
+        "numero_medidor": "202301001183",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 516,
+        "id_puesto": 1,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "243.80",
+        "lectura_actual": "319.00",
+        "consumo": "75.20",
+        "monto_total": "75.95"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 2,
+        "numero_puesto": "1B",
+        "propietario": "STANES",
+        "dni": "",
+        "grupo": 2,
+        "numero_medidor": "202301005203",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 517,
+        "id_puesto": 2,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "65.90",
+        "lectura_actual": "88.80",
+        "consumo": "22.90",
+        "monto_total": "23.13"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 91,
+        "numero_puesto": "205",
+        "propietario": "ENRIQUEZ BENDEZU AURORA",
+        "dni": "32945840",
+        "grupo": 1,
+        "numero_medidor": "202301005380",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 496,
+        "id_puesto": 91,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "29.30",
+        "lectura_actual": "34.00",
+        "consumo": "4.70",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 92,
+        "numero_puesto": "208",
+        "propietario": "BARRIENTOS  DE  MEJIA DORIS",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 497,
+        "id_puesto": 92,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "357.60",
+        "lectura_actual": "374.90",
+        "consumo": "17.30",
+        "monto_total": "17.47"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 12,
+        "numero_puesto": "21",
+        "propietario": "LLOTAS SANCHEZ JUANA",
+        "dni": "18822364",
+        "grupo": 2,
+        "numero_medidor": "202301000025",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 527,
+        "id_puesto": 12,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "134.40",
+        "lectura_actual": "158.00",
+        "consumo": "23.60",
+        "monto_total": "23.84"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 93,
+        "numero_puesto": "210",
+        "propietario": "AMELIA LOPEZ CUEVA",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301000556",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 498,
+        "id_puesto": 93,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "285.60",
+        "lectura_actual": "334.70",
+        "consumo": "49.10",
+        "monto_total": "49.59"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 109,
+        "numero_puesto": "211",
+        "propietario": "ENRIQUEZ BENDEZU EMILIANA",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301005498",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 499,
+        "id_puesto": 109,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "166.90",
+        "lectura_actual": "198.40",
+        "consumo": "31.50",
+        "monto_total": "31.82"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 110,
+        "numero_puesto": "219",
+        "propietario": "CAMPOS NUÑEZ SANTOS",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301005982",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 500,
+        "id_puesto": 110,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "185.50",
+        "lectura_actual": "307.10",
+        "consumo": "121.60",
+        "monto_total": "122.82"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 94,
+        "numero_puesto": "220",
+        "propietario": "SANCHEZ VIGO LOURDES GISELA",
+        "dni": "46085952",
+        "grupo": 1,
+        "numero_medidor": "202301006279",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 501,
+        "id_puesto": 94,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "52.50",
+        "lectura_actual": "61.90",
+        "consumo": "9.40",
+        "monto_total": "9.49"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 95,
+        "numero_puesto": "224",
+        "propietario": "HORNA CHAVEZ JOSE",
+        "dni": "32979286",
+        "grupo": 1,
+        "numero_medidor": "202301006163",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 502,
+        "id_puesto": 95,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "0.10",
+        "lectura_actual": "0.10",
+        "consumo": "0.00",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 111,
+        "numero_puesto": "226",
+        "propietario": "YRENE BERNUY DE OBESO",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301000018",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 503,
+        "id_puesto": 111,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "186.90",
+        "lectura_actual": "222.90",
+        "consumo": "36.00",
+        "monto_total": "36.36"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 20,
+        "numero_puesto": "228",
+        "propietario": "ROJAS RUIZ BRYAN MICHAEL",
+        "dni": "46739557",
+        "grupo": 2,
+        "numero_medidor": "202301003249",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 535,
+        "id_puesto": 20,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "124.90",
+        "lectura_actual": "157.70",
+        "consumo": "32.80",
+        "monto_total": "33.13"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 21,
+        "numero_puesto": "230",
+        "propietario": "REYES ROQUE CANDELARIA",
+        "dni": "32949676",
+        "grupo": 2,
+        "numero_medidor": "202301002792",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 536,
+        "id_puesto": 21,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "112.70",
+        "lectura_actual": "133.30",
+        "consumo": "20.60",
+        "monto_total": "20.81"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 96,
+        "numero_puesto": "231",
+        "propietario": "MORE DE CARLIN SOTERA",
+        "dni": "32958925",
+        "grupo": 1,
+        "numero_medidor": "202301004141",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 504,
+        "id_puesto": 96,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "61.50",
+        "lectura_actual": "78.20",
+        "consumo": "16.70",
+        "monto_total": "16.87"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 97,
+        "numero_puesto": "233",
+        "propietario": "HERNANDEZ FLORES MAGNA",
+        "dni": "32736277",
+        "grupo": 1,
+        "numero_medidor": "202301004147",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 505,
+        "id_puesto": 97,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "130.10",
+        "lectura_actual": "149.30",
+        "consumo": "19.20",
+        "monto_total": "19.39"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 98,
+        "numero_puesto": "234",
+        "propietario": "CHAVEZ MANCILLA JORGE",
+        "dni": "32949693",
+        "grupo": 1,
+        "numero_medidor": "202301004148",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 506,
+        "id_puesto": 98,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "44.30",
+        "lectura_actual": "52.30",
+        "consumo": "8.00",
+        "monto_total": "8.08"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 99,
+        "numero_puesto": "239",
+        "propietario": "PAREDES AVALOS ALESSANDRA",
+        "dni": "46514976",
+        "grupo": 1,
+        "numero_medidor": "202301004461",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 507,
+        "id_puesto": 99,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "150.80",
+        "lectura_actual": "180.10",
+        "consumo": "29.30",
+        "monto_total": "29.59"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 100,
+        "numero_puesto": "241",
+        "propietario": "CUBAS TARRILLO ELEUTERIO",
+        "dni": "32977639",
+        "grupo": 1,
+        "numero_medidor": "202301000039",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 508,
+        "id_puesto": 100,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "25.90",
+        "lectura_actual": "31.70",
+        "consumo": "5.80",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 101,
+        "numero_puesto": "242",
+        "propietario": "DAYANA SAMANTA BARBA LOPEZ",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301000992",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 509,
+        "id_puesto": 101,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "43.90",
+        "lectura_actual": "54.00",
+        "consumo": "10.10",
+        "monto_total": "10.20"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 102,
+        "numero_puesto": "243",
+        "propietario": "ALCEDO CARLIN JOSE",
+        "dni": "32736161",
+        "grupo": 1,
+        "numero_medidor": "202301004138",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 510,
+        "id_puesto": 102,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "4778.50",
+        "lectura_actual": "4783.70",
+        "consumo": "5.20",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 103,
+        "numero_puesto": "244",
+        "propietario": "CARBAJAL DE ALEMAN RUTH",
+        "dni": "32815805",
+        "grupo": 1,
+        "numero_medidor": "202301004417",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 511,
+        "id_puesto": 103,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "66.30",
+        "lectura_actual": "78.80",
+        "consumo": "12.50",
+        "monto_total": "12.63"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 22,
+        "numero_puesto": "248",
+        "propietario": "NAHOMI NINA RETAMOZO",
+        "dni": "32959236",
+        "grupo": 2,
+        "numero_medidor": "202301005523",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 537,
+        "id_puesto": 22,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "320.10",
+        "lectura_actual": "380.40",
+        "consumo": "60.30",
+        "monto_total": "60.90"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 23,
+        "numero_puesto": "250",
+        "propietario": "MEZA GONZALES MERCEDES",
+        "dni": "32905971",
+        "grupo": 2,
+        "numero_medidor": "202301000276",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 538,
+        "id_puesto": 23,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "908.80",
+        "lectura_actual": "1050.70",
+        "consumo": "141.90",
+        "monto_total": "143.32"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 24,
+        "numero_puesto": "251",
+        "propietario": "DEBORA RETAMOZO CARLOS",
+        "dni": "",
+        "grupo": 2,
+        "numero_medidor": "202301000019",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 539,
+        "id_puesto": 24,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "0.10",
+        "lectura_actual": "0.10",
+        "consumo": "0.00",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 25,
+        "numero_puesto": "252",
+        "propietario": "QUEZADA LUCIO ELENA",
+        "dni": "32542937",
+        "grupo": 2,
+        "numero_medidor": "202301005981",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 540,
+        "id_puesto": 25,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "525.70",
+        "lectura_actual": "617.90",
+        "consumo": "92.20",
+        "monto_total": "93.12"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 26,
+        "numero_puesto": "253",
+        "propietario": "QUISPE SANCHEZ STIVEN ANTONY",
+        "dni": "76402686",
+        "grupo": 2,
+        "numero_medidor": "202301004413",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 541,
+        "id_puesto": 26,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "205.60",
+        "lectura_actual": "243.50",
+        "consumo": "37.90",
+        "monto_total": "38.28"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 27,
+        "numero_puesto": "254",
+        "propietario": "CHAVEZ FRANCO CONSUELO",
+        "dni": "32832153",
+        "grupo": 2,
+        "numero_medidor": "202301003496",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 542,
+        "id_puesto": 27,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "427.10",
+        "lectura_actual": "532.70",
+        "consumo": "105.60",
+        "monto_total": "106.66"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 13,
+        "numero_puesto": "26",
+        "propietario": "AGAME MENDOZA JUAN ANTONIO",
+        "dni": "",
+        "grupo": 2,
+        "numero_medidor": "SN",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 528,
+        "id_puesto": 13,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "605.80",
+        "lectura_actual": "639.40",
+        "consumo": "33.60",
+        "monto_total": "33.94"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 28,
+        "numero_puesto": "262",
+        "propietario": "MIÑANO LOPEZ JULIO",
+        "dni": "32786629",
+        "grupo": 2,
+        "numero_medidor": "202301006161",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 543,
+        "id_puesto": 28,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "166.00",
+        "lectura_actual": "186.00",
+        "consumo": "20.00",
+        "monto_total": "20.20"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 29,
+        "numero_puesto": "264",
+        "propietario": "RAMIREZ CHARRA MAURA",
+        "dni": "32541206",
+        "grupo": 2,
+        "numero_medidor": "202301000045",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 544,
+        "id_puesto": 29,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "612.80",
+        "lectura_actual": "725.60",
+        "consumo": "112.80",
+        "monto_total": "113.93"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 30,
+        "numero_puesto": "266",
+        "propietario": "EULOGIA AMANDA ROJAS",
+        "dni": "32835438",
+        "grupo": 2,
+        "numero_medidor": "202301005974",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 545,
+        "id_puesto": 30,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "51.10",
+        "lectura_actual": "58.90",
+        "consumo": "7.80",
+        "monto_total": "7.88"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 31,
+        "numero_puesto": "267",
+        "propietario": "TISNADO LEON ELISAA CONSUELO",
+        "dni": "27142984",
+        "grupo": 2,
+        "numero_medidor": "202301006031",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 546,
+        "id_puesto": 31,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "48.30",
+        "lectura_actual": "55.10",
+        "consumo": "6.80",
+        "monto_total": "6.87"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 32,
+        "numero_puesto": "268",
+        "propietario": "REYES BEDON ALCIDES MARIBEL",
+        "dni": "32942352",
+        "grupo": 2,
+        "numero_medidor": "202301000303",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 547,
+        "id_puesto": 32,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "113.40",
+        "lectura_actual": "127.10",
+        "consumo": "13.70",
+        "monto_total": "13.84"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 14,
+        "numero_puesto": "27",
+        "propietario": "CONTRERAS FAJARDO EVELYN",
+        "dni": "41407863",
+        "grupo": 2,
+        "numero_medidor": "HSTL-001093",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 529,
+        "id_puesto": 14,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "520.90",
+        "lectura_actual": "604.70",
+        "consumo": "83.80",
+        "monto_total": "84.64"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 33,
+        "numero_puesto": "283",
+        "propietario": "RUBIO DE REYES ZENAIDA",
+        "dni": "18874667",
+        "grupo": 2,
+        "numero_medidor": "202301005519",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 548,
+        "id_puesto": 33,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "231.50",
+        "lectura_actual": "260.40",
+        "consumo": "28.90",
+        "monto_total": "29.19"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 34,
+        "numero_puesto": "288",
+        "propietario": "AGAPITO CUBA CARMEN",
+        "dni": "",
+        "grupo": 2,
+        "numero_medidor": "SN",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 549,
+        "id_puesto": 34,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "0.00",
+        "lectura_actual": "73.50",
+        "consumo": "73.50",
+        "monto_total": "74.24"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 35,
+        "numero_puesto": "292",
+        "propietario": "JUAN CARLOS RUBIÑOS LEYVA",
+        "dni": "42095236",
+        "grupo": 2,
+        "numero_medidor": "202301004150",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 550,
+        "id_puesto": 35,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "298.50",
+        "lectura_actual": "395.00",
+        "consumo": "96.50",
+        "monto_total": "97.47"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 104,
+        "numero_puesto": "293",
+        "propietario": "MAYRA VALERIO BARROSO",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301004309",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 512,
+        "id_puesto": 104,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "215.40",
+        "lectura_actual": "215.40",
+        "consumo": "0.00",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 105,
+        "numero_puesto": "296",
+        "propietario": "GUARNIZ RIOS ELMIN HENRY",
+        "dni": "32977534",
+        "grupo": 1,
+        "numero_medidor": "202301004968",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 513,
+        "id_puesto": 105,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "75.80",
+        "lectura_actual": "89.10",
+        "consumo": "13.30",
+        "monto_total": "13.43"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 106,
+        "numero_puesto": "298",
+        "propietario": "GUARNIZ MUÑOZ ENCARNACION",
+        "dni": "32977140",
+        "grupo": 1,
+        "numero_medidor": "202301005153",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 514,
+        "id_puesto": 106,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "57.30",
+        "lectura_actual": "79.90",
+        "consumo": "22.60",
+        "monto_total": "22.83"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 107,
+        "numero_puesto": "299",
+        "propietario": "ESPERANZA DE SAMAME",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301000823",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 515,
+        "id_puesto": 107,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "33.40",
+        "lectura_actual": "40.00",
+        "consumo": "6.60",
+        "monto_total": "6.67"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 4,
+        "numero_puesto": "3",
+        "propietario": "ORTEGA SANCHEZ GLADYS",
+        "dni": "32541017",
+        "grupo": 2,
+        "numero_medidor": "202301005213",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 519,
+        "id_puesto": 4,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "114.60",
+        "lectura_actual": "135.00",
+        "consumo": "20.40",
+        "monto_total": "20.60"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 15,
+        "numero_puesto": "41",
+        "propietario": "ROSA ZELADA GOMEZ",
+        "dni": "",
+        "grupo": 2,
+        "numero_medidor": "202301000055",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 530,
+        "id_puesto": 15,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "117.80",
+        "lectura_actual": "148.60",
+        "consumo": "30.80",
+        "monto_total": "31.11"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 16,
+        "numero_puesto": "42",
+        "propietario": "BARDALES CHAVEZ LIDIA",
+        "dni": "32791066",
+        "grupo": 2,
+        "numero_medidor": "202301003633",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 531,
+        "id_puesto": 16,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "123.60",
+        "lectura_actual": "150.00",
+        "consumo": "26.40",
+        "monto_total": "26.66"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 17,
+        "numero_puesto": "44",
+        "propietario": "NANCY BUSTAMENTE DE HORNA",
+        "dni": "",
+        "grupo": 2,
+        "numero_medidor": "202301005496",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 532,
+        "id_puesto": 17,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "294.80",
+        "lectura_actual": "343.80",
+        "consumo": "49.00",
+        "monto_total": "49.49"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 36,
+        "numero_puesto": "47",
+        "propietario": "YRENE BERNUY DE OBESO",
+        "dni": "32784494",
+        "grupo": 1,
+        "numero_medidor": "202301000944",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 440,
+        "id_puesto": 36,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "513.80",
+        "lectura_actual": "600.50",
+        "consumo": "86.70",
+        "monto_total": "87.57"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 5,
+        "numero_puesto": "5",
+        "propietario": "CALLE ZUÑIGA MELIDA",
+        "dni": "32849833",
+        "grupo": 2,
+        "numero_medidor": "202301001352",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 520,
+        "id_puesto": 5,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "105.70",
+        "lectura_actual": "124.20",
+        "consumo": "18.50",
+        "monto_total": "18.69"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 37,
+        "numero_puesto": "52",
+        "propietario": "MIGUEL ESPINOZA ESTRADA",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301004122",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 441,
+        "id_puesto": 37,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "85.50",
+        "lectura_actual": "102.50",
+        "consumo": "17.00",
+        "monto_total": "17.17"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 38,
+        "numero_puesto": "59A",
+        "propietario": "VILLAREAL ALVA JANINA LIZBETH",
+        "dni": "46428591",
+        "grupo": 1,
+        "numero_medidor": "202301006113",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 442,
+        "id_puesto": 38,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "1255.80",
+        "lectura_actual": "1473.90",
+        "consumo": "218.10",
+        "monto_total": "220.28"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 6,
+        "numero_puesto": "6",
+        "propietario": "LIDIA CABRERA DE AGUILAR",
+        "dni": "",
+        "grupo": 2,
+        "numero_medidor": "202301001349",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 521,
+        "id_puesto": 6,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "256.90",
+        "lectura_actual": "302.00",
+        "consumo": "45.10",
+        "monto_total": "45.55"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 39,
+        "numero_puesto": "62",
+        "propietario": "CUEVA DIONICIO EMILIA",
+        "dni": "32832193",
+        "grupo": 1,
+        "numero_medidor": "202301000004",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 443,
+        "id_puesto": 39,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "254.90",
+        "lectura_actual": "299.00",
+        "consumo": "44.10",
+        "monto_total": "44.54"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 40,
+        "numero_puesto": "64",
+        "propietario": "ARMAS ACOSTA ELADIO",
+        "dni": "32957700",
+        "grupo": 1,
+        "numero_medidor": "202301000053",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 444,
+        "id_puesto": 40,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "82.90",
+        "lectura_actual": "94.10",
+        "consumo": "11.20",
+        "monto_total": "11.31"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 41,
+        "numero_puesto": "67",
+        "propietario": "MARILI RIVERA MEZA",
+        "dni": "41228920",
+        "grupo": 1,
+        "numero_medidor": "202301001588",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 445,
+        "id_puesto": 41,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "685.80",
+        "lectura_actual": "870.40",
+        "consumo": "184.60",
+        "monto_total": "186.45"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 42,
+        "numero_puesto": "69",
+        "propietario": "CUEVA DIONICIO JULIANA",
+        "dni": "32959327",
+        "grupo": 1,
+        "numero_medidor": "202301000234",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 446,
+        "id_puesto": 42,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "710.70",
+        "lectura_actual": "819.30",
+        "consumo": "108.60",
+        "monto_total": "109.69"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 7,
+        "numero_puesto": "7",
+        "propietario": "FLORES DE VALDERRAMA ALICIA",
+        "dni": "32983001",
+        "grupo": 2,
+        "numero_medidor": "202301004986",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 522,
+        "id_puesto": 7,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "2.40",
+        "lectura_actual": "2.70",
+        "consumo": "0.30",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 43,
+        "numero_puesto": "85",
+        "propietario": "GUSMAN ALVARES GROVER",
+        "dni": "40508533",
+        "grupo": 1,
+        "numero_medidor": "202301000014",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 447,
+        "id_puesto": 43,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "365.50",
+        "lectura_actual": "398.10",
+        "consumo": "32.60",
+        "monto_total": "32.93"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 44,
+        "numero_puesto": "88",
+        "propietario": "ARMAS FERNANDEZ JULISSA",
+        "dni": "42617325",
+        "grupo": 1,
+        "numero_medidor": "202301006168",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 448,
+        "id_puesto": 44,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "768.80",
+        "lectura_actual": "948.40",
+        "consumo": "179.60",
+        "monto_total": "181.40"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 45,
+        "numero_puesto": "90",
+        "propietario": "FLOR MONICA EZQUIVEL LEON",
+        "dni": "32979851",
+        "grupo": 1,
+        "numero_medidor": "202301004423",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 449,
+        "id_puesto": 45,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "113.60",
+        "lectura_actual": "133.30",
+        "consumo": "19.70",
+        "monto_total": "19.90"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 46,
+        "numero_puesto": "91",
+        "propietario": "OSCAR ARIAS QUIÑONES",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301004135",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 450,
+        "id_puesto": 46,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "124.60",
+        "lectura_actual": "142.40",
+        "consumo": "17.80",
+        "monto_total": "17.98"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 47,
+        "numero_puesto": "92",
+        "propietario": "SANCHEZ SARMIENTO JULIA",
+        "dni": "32808641",
+        "grupo": 1,
+        "numero_medidor": "202301004144",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 451,
+        "id_puesto": 47,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "35.90",
+        "lectura_actual": "41.40",
+        "consumo": "5.50",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 48,
+        "numero_puesto": "94",
+        "propietario": "CELEDONIA ALVA FAJARDO",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301004399",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 452,
+        "id_puesto": 48,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "250.70",
+        "lectura_actual": "292.50",
+        "consumo": "41.80",
+        "monto_total": "42.22"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 49,
+        "numero_puesto": "95",
+        "propietario": "SILVA LACETE BLANCA ALICIA",
+        "dni": "32849234",
+        "grupo": 1,
+        "numero_medidor": "202301003497",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 453,
+        "id_puesto": 49,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "75.80",
+        "lectura_actual": "90.00",
+        "consumo": "14.20",
+        "monto_total": "14.34"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 50,
+        "numero_puesto": "97",
+        "propietario": "RAMIREZ VILLAVICENCIO",
+        "dni": "32987166",
+        "grupo": 1,
+        "numero_medidor": "202301002068",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 454,
+        "id_puesto": 50,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "25.90",
+        "lectura_actual": "30.20",
+        "consumo": "4.30",
+        "monto_total": "6.00"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
+    },
+    {
+      "puesto": {
+        "id": 108,
+        "numero_puesto": "98",
+        "propietario": "CALLE ZUÑIGA MELIDA JULIA",
+        "dni": "",
+        "grupo": 1,
+        "numero_medidor": "202301004306",
+        "activo": true
+      },
+      "ultimaLectura": {
+        "id": 455,
+        "id_puesto": 108,
+        "fecha": "2025-11-27",
+        "lectura_anterior": "136.90",
+        "lectura_actual": "159.30",
+        "consumo": "22.40",
+        "monto_total": "22.62"
+      },
+      "deudas": {
+        "lectura": [],
+        "otros": [],
+        "totales": {
+          "lectura": 0,
+          "otros": 0,
+          "general": 0
+        }
+      }
     }
-  },
-  {
-    "puesto": {
-      "id": 102,
-      "numero_puesto": "A-02",
-      "propietario": "Juan Pérez",
-      "dni": "87654321",
-      "grupo": 1,
-      "numero_medidor": "MD-1002"
-    },
-    "ultimaLectura": {
-      "id": 5002,
-      "fecha": "2025-12-01",
-      "lectura_anterior": 950,
-      "lectura_actual": 980,
-      "consumo": "30"
-    },
-    "deudas": {
-      "lectura": [
-        { "id": 9001, "titulo": "Ajuste lectura octubre", "monto": 10 }
-      ],
-      "otros": [],
-      "totales": { "lectura": 10, "otros": 0, "general": 10 }
-    }
-  },
-  {
-    "puesto": {
-      "id": 103,
-      "numero_puesto": "B-10",
-      "propietario": "Rosa García",
-      "dni": "44556677",
-      "grupo": 2,
-      "numero_medidor": "MD-2001"
-    },
-    "ultimaLectura": {
-      "id": 5003,
-      "fecha": "2025-12-01",
-      "lectura_anterior": 2000,
-      "lectura_actual": 2012,
-      "consumo": "12"
-    },
-    "deudas": {
-      "lectura": [],
-      "otros": [
-        { "id": 9101, "titulo": "Reconexión", "monto": 15 }
-      ],
-      "totales": { "lectura": 0, "otros": 15, "general": 15 }
-    }
-  },
-  {
-    "puesto": {
-      "id": 104,
-      "numero_puesto": "C-05",
-      "propietario": "Carlos Torres",
-      "dni": "99887766",
-      "grupo": 3,
-      "numero_medidor": "MD-3005"
-    },
-    "ultimaLectura": {
-      "id": 5004,
-      "fecha": "2025-12-01",
-      "lectura_anterior": 400,
-      "lectura_actual": 404,
-      "consumo": "4"
-    },
-    "deudas": {
-      "lectura": [],
-      "otros": [],
-      "totales": { "lectura": 0, "otros": 0, "general": 0 }
-    }
-  },
-  {
-    "puesto": {
-      "id": 105,
-      "numero_puesto": "D-12",
-      "propietario": "Luisa Mendoza",
-      "dni": "22334455",
-      "grupo": 4,
-      "numero_medidor": "MD-4012"
-    },
-    "ultimaLectura": {
-      "id": 5005,
-      "fecha": "2025-12-01",
-      "lectura_anterior": 1600,
-      "lectura_actual": 1655,
-      "consumo": "55"
-    },
-    "deudas": {
-      "lectura": [],
-      "otros": [
-        { "id": 9201, "titulo": "Multa mora", "monto": 8 }
-      ],
-      "totales": { "lectura": 0, "otros": 8, "general": 8 }
-    }
-  }
   ]
 }
